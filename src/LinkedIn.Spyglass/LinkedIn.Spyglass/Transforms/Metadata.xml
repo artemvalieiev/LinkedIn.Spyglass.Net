@@ -1,0 +1,31 @@
+﻿<metadata>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass']" name="managedName">LinkedIn.Spyglass</attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.suggestions']" name="managedName">
+        LinkedIn.Spyglass.Suggestions
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.suggestions.interfaces']" name="managedName">
+        LinkedIn.Spyglass.Suggestions
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.suggestions.impl']" name="managedName">
+        LinkedIn.Spyglass.Suggestions
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.mentions']" name="managedName">
+        LinkedIn.Spyglass.Mentions
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.ui']" name="managedName">LinkedIn.Spyglass.Ui</attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.ui.wrappers']" name="managedName">
+        LinkedIn.Spyglass.Ui.Wrappers
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.tokenization']" name="managedName">
+        LinkedIn.Spyglass.Tokenization
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.tokenization.interfaces']" name="managedName">
+        LinkedIn.Spyglass.Tokenization
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.tokenization.impl']" name="managedName">
+        LinkedIn.Spyglass.Tokenization
+    </attr>
+    <attr path="/api/package[@name='com.linkedin.android.spyglass.suggestions']/class[@name='SuggestionsAdapter']/method[@name='getItem' and count(parameter)=1 and parameter[1][@type='int']]"
+          name="managedReturn">Java.Lang.Object
+    </attr>
+</metadata>
