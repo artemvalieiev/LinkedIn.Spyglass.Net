@@ -36,11 +36,11 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
 
         SetContentView(Resource.Layout.grid_mentions);
 
-        _recyclerView = FindViewById<RecyclerView>(Resource.Id.mentions_grid);
+        _recyclerView = FindViewById<RecyclerView>(Resource.Id.mentions_grid)!;
         _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
 
-        _editor = FindViewById<MentionsEditText>(Resource.Id.editor);
+        _editor = FindViewById<MentionsEditText>(Resource.Id.editor)!;
         // The tokenizer setup requires additional implementation of WordTokenizer
         wordTokenizer = new WordTokenizer(tokenizerConfig);
         _editor.Tokenizer = wordTokenizer;
