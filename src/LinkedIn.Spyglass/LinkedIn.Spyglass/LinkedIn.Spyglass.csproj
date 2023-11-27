@@ -5,7 +5,22 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+    <PropertyGroup>
+        <!-- NuGet Package properties -->
+        <PackageReadmeFile>Readme.md</PackageReadmeFile>
+        <Version>3.0.3.0</Version>
+        <Authors>Artem Valieiev</Authors>
+        <Product>LinkedIn.Spyglass</Product>
+        <Description>A powerful Android library that provides highly-customizable widgets (with smart defaults) to easily add social-media-esque mention (aka tag) support to your app</Description>
+        <PackageTags>Mentions;EditText;Android Editor</PackageTags>
+        <RepositoryUrl>https://github.com/artemvalieiev/Linked.Spyglass.Net</RepositoryUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="../../../Readme.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 </Project>
