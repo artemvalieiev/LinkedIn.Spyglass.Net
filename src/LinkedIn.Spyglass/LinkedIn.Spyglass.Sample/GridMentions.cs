@@ -1,5 +1,6 @@
 using Android.Views;
 using AndroidX.AppCompat.App;
+using AndroidX.CardView.Widget;
 using AndroidX.RecyclerView.Widget;
 using LinkedIn.Spyglass.Suggestions;
 using LinkedIn.Spyglass.Tokenization;
@@ -7,7 +8,7 @@ using LinkedIn.Spyglass.Ui;
 
 namespace LinkedIn.Spyglass.Sample;
 
-[Activity(Label = "@string/app_name", Theme = "@style/Theme.SpyglassSample", MainLauncher = false)]
+[Activity(Label = "@string/app_name", Theme = "@style/Theme.SpyglassSample", MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize)]
 public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestionsResultListener,
     ISuggestionsVisibilityManager
 {
@@ -19,7 +20,7 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
     private Person.PersonLoader _people;
     private bool _isDisplayingSuggestions;
 
-    WordTokenizerConfig tokenizerConfig = new WordTokenizerConfig
+    private WordTokenizerConfig tokenizerConfig = new WordTokenizerConfig
             .Builder()
         .SetWordBreakChars(", ")
         .SetExplicitChars("@")
@@ -28,6 +29,7 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
         .Build();
 
     private WordTokenizer wordTokenizer;
+    private CardView _recyclerViewCardView;
 
 
     protected override void OnCreate(Bundle bundle)
@@ -37,7 +39,8 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
         SetContentView(Resource.Layout.grid_mentions);
 
         _recyclerView = FindViewById<RecyclerView>(Resource.Id.mentions_grid)!;
-        _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
+        _recyclerViewCardView = _recyclerView.Parent as CardView;
+        _recyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Vertical, false));
 
 
         _editor = FindViewById<MentionsEditText>(Resource.Id.editor)!;
@@ -89,8 +92,7 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
         DisplaySuggestions(false);
         _editor.RequestFocus();
     }
-
-    // WordTokenizer.ISuggestionsVisibilityManager Implementation
+    
     bool ISuggestionsVisibilityManager.IsDisplayingSuggestions => _recyclerView.Visibility == ViewStates.Visible;
 
     void ISuggestionsVisibilityManager.DisplaySuggestions(bool p0)
@@ -100,6 +102,7 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
 
     void DisplaySuggestions(bool display)
     {
+        _recyclerViewCardView.Visibility = display ? ViewStates.Visible : ViewStates.Gone;
         _recyclerView.Visibility = display ? ViewStates.Visible : ViewStates.Gone;
     }
 
