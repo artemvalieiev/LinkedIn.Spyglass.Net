@@ -27,3 +27,4 @@ Spyglass is divided into three, customizable layers: *tokenization*, *suggestion
 
 For sample setup of custom view that shows mentions list and appears on "@" character type see [GridMentions.cs in Activity Sample project](https://github.com/artemvalieiev/LinkedIn.Spyglass.Net/blob/main/src/LinkedIn.Spyglass/LinkedIn.Spyglass.Sample/GridMentions.cs)
 
+![gif sample](sample.gif)
