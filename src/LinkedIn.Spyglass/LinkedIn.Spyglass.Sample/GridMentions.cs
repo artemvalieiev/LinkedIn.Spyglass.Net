@@ -55,6 +55,8 @@ public class GridMentions : AppCompatActivity, IQueryTokenReceiver, ISuggestions
         _recyclerView.SetAdapter(_adapter);
 
         _people = new Person.PersonLoader(Resources);
+
+        DisplaySuggestions(false);
     }
 
     // WordTokenizer.IQueryTokenReceiver Implementation

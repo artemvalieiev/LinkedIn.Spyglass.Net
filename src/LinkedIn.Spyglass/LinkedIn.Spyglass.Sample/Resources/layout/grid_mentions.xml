@@ -29,6 +29,7 @@
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="bottom"
                 app:cardCornerRadius="8dp"
+                android:padding="8dp"
                 app:cardElevation="8dp">
 
             <androidx.recyclerview.widget.RecyclerView
